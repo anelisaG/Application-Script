@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AddressBookModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AddressBook">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="DateCreated" Type="DateTime" Precision="3" />
+    <Property Name="DateModified" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="AddressBookEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AddressBooks" EntityType="Self.AddressBook" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <FunctionImport Name="spGetUserContactList" ReturnType="Collection(AddressBookModel.spGetUserContactList_Result)" />
+    <FunctionImport Name="spSeachContactList" ReturnType="Collection(AddressBookModel.spSeachContactList_Result)">
+      <Parameter Name="SeachKeyWord" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="spGetUserContactList_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Surname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DateModified" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="spSeachContactList_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Surname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateCreated" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DateModified" Nullable="true" Precision="23" />
+  </ComplexType>
+</Schema>

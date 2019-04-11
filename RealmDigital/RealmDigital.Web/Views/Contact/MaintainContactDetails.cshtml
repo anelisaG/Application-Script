@@ -1,0 +1,234 @@
+﻿
+@{
+    ViewBag.Title = "Realm - Maintain (list, Add and Edit) contact Details";
+}
+<div class="row heading-margin">
+    <div class="col-xs-12">
+        <h3 class="page-header page-header-position header-text-color">
+            Maintain Contact Details
+        </h3>
+    </div>
+
+</div>
+
+@using (Html.BeginForm("MaintainContactDetails", "Contact", FormMethod.Get, new { @id = "forMaintainContactDetails" }))
+{
+<div class="col-xs-12 col-md-6 col-lg-12">
+
+    <div class="row">
+
+        <div class="col-xs-12 col-md-6 col-lg-12">
+
+            <div class="row">
+
+                <div class="alert alert-suv= alert-padding" role="alert" id="alertRemoveContact">
+
+                    <i class="fa fa-check-circle alert-message" aria-hidden="true"></i> &nbsp;<label id="lblRemoveContactMessage"></label>
+
+                </div>
+
+                <div class='col-sm-3'>
+                   
+                    <input type="button" id="btnAddNewContact" class="form-control btn btn-success" value="Add Contact" style="width:123px" />
+                    <input type="button" id="btnSearch" class="form-control btn btn-info" value="Seach" style="width:123px" /><br />
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-xs-12">
+
+            <table class="table table-striped" id="tblContactInformation">
+
+                <thead class="table-header" style="color: white; background-color: #00567E; font-weight:bold">
+
+                    <tr>
+                        <th> PersonID</th>
+                        <th> Name</th>
+                        <th> Surname </th>
+                        <th> Address</th>
+                        <th> PhoneNumber </th>
+                        <th> Email Address </th>
+
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th> PersonID</th>
+                        <th> Name</th>
+                        <th> Surname </th>
+                        <th> Address</th>
+                        <th> PhoneNumber </th>
+                        <th> Email Address </th>
+
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalMaintainContact" aria-hidden="true" tabindex="-1" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:793px">
+                <div class="modal-header modal-back-color">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" style="color:white">Edit Contact Details<span id="#"></span></h4>
+                </div>
+                <div class="modal-body">
+
+
+                    <div class="alert alert-warning alert-padding" role="alert" id="divSaveContactWarningAlert">
+
+                        <i class="fa fa-exclamation-triangle alert-message" aria-hidden="true"></i> &nbsp;<label id="lblSaveContactWarningAlert"></label>
+
+                    </div>
+
+                    <div class="alert alert-success alert-padding" role="alert" style="display:none; padding-bottom:7px; padding-top:9px" id="divSaveContactStatusAlert">
+
+                        <i class="fa fa-check-circle alert-message" aria-hidden="true"></i> &nbsp;<label id="lblSaveContactSuccessAlert"></label>
+
+                    </div>
+
+                    <fieldset>
+
+                        <div class='row'>
+
+                            <input type="hidden" id="hiddenId" />
+                            <input type="hidden" id="hiddenUserId" />
+
+                            <div class='col-sm-3'>
+                                <div class='form-group'>
+                                    <label class="heading-text-color">User</label>
+                                    <select id="drpUser" class="form-control drop-down-border-color heading-text-color">
+                                        <option class="heading-text-color" value="" disabled selected>---Please Select---</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+
+
+                            <div class='col-sm-3'>
+                                <div class='form-group'>
+                                    <label class="heading-text-color">Email Address</label>
+                                    <input type="text" id="txtEmailAddress" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class='col-sm-3'>
+                                <div class='form-group'>
+                                    <label id="lblPhoneNumber">PhoneNumber</label>
+                                    <input type="text" id="txtPhoneNumber" class="form-control" />
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </fieldset>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="closeModalControl">Close</button>
+                    <button type="button" class="btn btn-success modal-back-color" id="btnSaveContact">Save</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalSeachContact" aria-hidden="true" tabindex="-1" role="dialog" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width:793px">
+                <div class="modal-header modal-back-color">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" style="color:white">Searching Contact Information<span id="#"></span></h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="alert alert-success alert-padding" role="alert" style="display:none; padding-bottom:7px; padding-top:9px" id="divSavePersonStatusAlert">
+
+                        <i class="fa fa-check-circle alert-message" aria-hidden="true"></i> &nbsp;<label id="lblSavePersonSuccessAlert"></label>
+
+                    </div>
+
+                    <fieldset>
+
+                        <div class='row'>
+
+                            <input type="hidden" id="hiddenPersonID" />
+
+
+
+                            <div class='col-sm-6'>
+                                <div class='form-group'>
+                                    <label class="heading-text-color">Enter Search:</label>
+                                    <input placeholder="search" type="text" id="txtSearch" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class='col-sm-3'>
+                                <div class='form-group'>
+                                    <label class="heading-text-color"></label><br />
+                                    <button type="button" class="btn btn-info modal-back-color" id="btnFind">Find</button>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </fieldset>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="closeModalControl">Close</button>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalLoadStatus" aria-hidden="true" tabindex="-1" role="dialog" data-backdrop="static">
+
+        <div class="modal-dialog">
+
+            <div class="modal-content" style="margin-top:322px; width:0px; border:none">
+
+                <div class="modal-body">
+
+                    <div class="row">
+
+                        <centre>
+
+                            <i class="fa fa-spinner fa-pulse fa-3x fa-fw heading-text-color"></i>
+
+                        </centre>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+}
+<script src="~/Content/js/views/Contact.js"></script>
+
+
+

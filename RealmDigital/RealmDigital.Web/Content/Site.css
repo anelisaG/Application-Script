@@ -1,0 +1,118 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 0px;
+    padding-right: 15px;
+}
+
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: none;
+}
+
+.nav-inverse-color {
+    background-color: #eeeeee;
+    border-color: #eeeeee;
+    border-bottom-color: #00567E;
+    border-bottom-width: 2px;
+}
+
+.link-text-color {
+    color: black;
+}
+
+.heading-margin {
+    margin-top: -55px;
+}
+
+.header-background-color {
+    background-color: white;
+}
+
+.header {
+    background-color: #00567E;
+    border-color: #080808;
+    /*color: white;*/
+    height: 90px;
+    font-weight: bold;
+}
+
+.button-back-color {
+
+        background-color: #1cb5b0;
+            color: white;
+
+}
+.modal-back-color {
+    background-color: #00567E;
+    color: white;
+}
+
+.page-header-position {
+    margin: 52px 0 20px;
+}
+
+.nav-position {
+    margin: 40px 0px 0px 147px;
+    width: 320px;
+}
+
+.navbar-brand {
+    color: black;
+}
+
+.company-logo {
+    vertical-align: middle;
+    margin: -33px 0px -22px -229px;
+}
+
+li {
+    color: black;
+}
+
+.nav navbar-nav {
+    color: black;
+}
+
+.navbar-inverse .navbar-brand {
+    color: black;
+}
+
+.table-header {
+    color: white;
+    background-color: #c64753;
+    font-weight: bold;
+}
+
+.header-text-color {
+    color: black;
+}
+
+
+.logo-div {
+    margin: 0px 0px 0px 125px;
+}
+
+.logo {
+    width: 324px;
+    margin-top:-33px;
+}
+
+.nav-buttons {
+    float: right;
+    margin-top: .92em;
+}
+
+#page-header a.btn {
+    margin-left: .3em;
+}
+/*thead {
+    background-color: #00567E;
+}*/

@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RTechnologiesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RealmDigital.dbo.vwBookingList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwBookingList">
+    <Key>
+      <PropertyRef Name="BookingID" />
+    </Key>
+    <Property Name="BookingID" Type="int" Nullable="false" />
+    <Property Name="EventID" Type="int" />
+    <Property Name="Event" Type="varchar" MaxLength="50" />
+    <Property Name="PersonID" Type="int" />
+    <Property Name="FullName" Type="varchar" MaxLength="101" />
+    <Property Name="BookingDate" Type="datetime" />
+    <Property Name="AmountDue" Type="float" />
+    <Property Name="DepositPaid" Type="float" />
+    <Property Name="DepositPaidDate" Type="datetime" />
+    <Property Name="FinalAmountPaid" Type="float" />
+    <Property Name="PaymentNotes" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RealmDigital.dbo.vwEventList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwEventList">
+    <Key>
+      <PropertyRef Name="EventID" />
+      <PropertyRef Name="HasGolf" />
+      <PropertyRef Name="IsBeginnersCourse" />
+    </Key>
+    <Property Name="EventID" Type="int" Nullable="false" />
+    <Property Name="VenueName" Type="varchar" MaxLength="50" />
+    <Property Name="VenueID" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="EndDateDisplay" Type="datetime" />
+    <Property Name="Description" Type="varchar" MaxLength="100" />
+    <Property Name="HasGolf" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="IsBeginnersCourse" Type="varchar" MaxLength="3" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RealmDigital.dbo.vwPeopleList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwPeopleList">
+    <Key>
+      <PropertyRef Name="PersonID" />
+    </Key>
+    <Property Name="PersonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="Preferredname" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RealmDigital.dbo.vwVenueList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwVenueList">
+    <Key>
+      <PropertyRef Name="VenueID" />
+    </Key>
+    <Property Name="VenueID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="WebsiteUrl" Type="varchar" MaxLength="50" />
+    <Property Name="Picture" Type="image" />
+    <Property Name="MapPicture" Type="image" />
+    <Property Name="Description" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Function Name="procMaintainBooking" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BookingID" Type="int" Mode="In" />
+    <Parameter Name="EventID" Type="int" Mode="In" />
+    <Parameter Name="PersonID" Type="int" Mode="In" />
+    <Parameter Name="BookingDate" Type="datetime" Mode="In" />
+    <Parameter Name="AmountDue" Type="float" Mode="In" />
+    <Parameter Name="DepositPaid" Type="float" Mode="In" />
+    <Parameter Name="DepositPaiDate" Type="datetime" Mode="In" />
+    <Parameter Name="FinalAmountPaid" Type="float" Mode="In" />
+    <Parameter Name="PaymentNotes" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="procMaintainEvent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EventID" Type="int" Mode="In" />
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+    <Parameter Name="Venue" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDateDisplay" Type="datetime" Mode="In" />
+    <Parameter Name="HasGolf" Type="bit" Mode="In" />
+    <Parameter Name="IsbeginnersCourse" Type="bit" Mode="In" />
+    <Parameter Name="Description" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="procMaintainPeople" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PersonID" Type="int" Mode="In" />
+    <Parameter Name="Title" Type="varchar" Mode="In" />
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="PreferredName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="Address" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="procMaintainVenue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="VenueID" Type="int" Mode="In" />
+    <Parameter Name="Name" Type="varchar" Mode="In" />
+    <Parameter Name="Address" Type="varchar" Mode="In" />
+    <Parameter Name="WebsiteUrl" Type="varchar" Mode="In" />
+    <Parameter Name="Picture" Type="image" Mode="In" />
+    <Parameter Name="MapPicture" Type="image" Mode="In" />
+    <Parameter Name="Description" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="RTechnologiesModelStoreContainer">
+    <EntitySet Name="vwBookingList" EntityType="Self.vwBookingList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwBookingList].[BookingID] AS [BookingID], 
+    [vwBookingList].[EventID] AS [EventID], 
+    [vwBookingList].[Event] AS [Event], 
+    [vwBookingList].[PersonID] AS [PersonID], 
+    [vwBookingList].[FullName] AS [FullName], 
+    [vwBookingList].[BookingDate] AS [BookingDate], 
+    [vwBookingList].[AmountDue] AS [AmountDue], 
+    [vwBookingList].[DepositPaid] AS [DepositPaid], 
+    [vwBookingList].[DepositPaidDate] AS [DepositPaidDate], 
+    [vwBookingList].[FinalAmountPaid] AS [FinalAmountPaid], 
+    [vwBookingList].[PaymentNotes] AS [PaymentNotes]
+    FROM [dbo].[vwBookingList] AS [vwBookingList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwEventList" EntityType="Self.vwEventList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwEventList].[EventID] AS [EventID], 
+    [vwEventList].[VenueName] AS [VenueName], 
+    [vwEventList].[VenueID] AS [VenueID], 
+    [vwEventList].[Name] AS [Name], 
+    [vwEventList].[StartDate] AS [StartDate], 
+    [vwEventList].[EndDate] AS [EndDate], 
+    [vwEventList].[EndDateDisplay] AS [EndDateDisplay], 
+    [vwEventList].[Description] AS [Description], 
+    [vwEventList].[HasGolf] AS [HasGolf], 
+    [vwEventList].[IsBeginnersCourse] AS [IsBeginnersCourse]
+    FROM [dbo].[vwEventList] AS [vwEventList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwPeopleList" EntityType="Self.vwPeopleList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwPeopleList].[PersonID] AS [PersonID], 
+    [vwPeopleList].[Title] AS [Title], 
+    [vwPeopleList].[FirstName] AS [FirstName], 
+    [vwPeopleList].[Preferredname] AS [Preferredname], 
+    [vwPeopleList].[LastName] AS [LastName], 
+    [vwPeopleList].[Address] AS [Address]
+    FROM [dbo].[vwPeopleList] AS [vwPeopleList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwVenueList" EntityType="Self.vwVenueList" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwVenueList].[VenueID] AS [VenueID], 
+    [vwVenueList].[Name] AS [Name], 
+    [vwVenueList].[WebsiteUrl] AS [WebsiteUrl], 
+    [vwVenueList].[Picture] AS [Picture], 
+    [vwVenueList].[MapPicture] AS [MapPicture], 
+    [vwVenueList].[Description] AS [Description]
+    FROM [dbo].[vwVenueList] AS [vwVenueList]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

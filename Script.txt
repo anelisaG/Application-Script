@@ -1,0 +1,80 @@
+USE [AddressBook]
+GO
+/****** Object:  Table [dbo].[AddressBook]    Script Date: 2019-04-10 04:24:25 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AddressBook](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[UserId] [int] NULL,
+	[PhoneNumber] [varchar](10) NULL,
+	[EmailAddress] [varchar](50) NULL,
+	[IsDeleted] [bit] NULL,
+	[DateCreated] [datetime] NULL,
+	[DateModified] [datetime] NULL,
+ CONSTRAINT [PK_AddressBook] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[User]    Script Date: 2019-04-10 04:24:25 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[User](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NULL,
+	[Surname] [varchar](50) NULL,
+	[Address] [varchar](250) NULL,
+ CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[AddressBook] ON 
+GO
+INSERT [dbo].[AddressBook] ([Id], [UserId], [PhoneNumber], [EmailAddress], [IsDeleted], [DateCreated], [DateModified]) VALUES (1, 1, N'0735241458', N'ageleba@gmail.com', 0, CAST(N'2019-04-09T00:00:00.000' AS DateTime), CAST(N'2019-04-09T00:00:00.000' AS DateTime))
+GO
+INSERT [dbo].[AddressBook] ([Id], [UserId], [PhoneNumber], [EmailAddress], [IsDeleted], [DateCreated], [DateModified]) VALUES (3, 1, N'0217418524', N'ageleba@yahoo.com', 0, CAST(N'2019-04-08T00:00:00.000' AS DateTime), CAST(N'2019-04-08T00:00:00.000' AS DateTime))
+GO
+SET IDENTITY_INSERT [dbo].[AddressBook] OFF
+GO
+SET IDENTITY_INSERT [dbo].[User] ON 
+GO
+INSERT [dbo].[User] ([Id], [Name], [Surname], [Address]) VALUES (1, N'Anelisa', N'Geleba', N'142 Aloe Road Cape Town 7100')
+GO
+SET IDENTITY_INSERT [dbo].[User] OFF
+GO
+/****** Object:  StoredProcedure [dbo].[spGetUserContactList]    Script Date: 2019-04-10 04:24:25 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[spGetUserContactList]
+AS
+SELECT u.Id as UserId, ab.Id,u.Name, u.Surname, u.Address, ab.PhoneNumber, ab.EmailAddress, ab.DateCreated, ab.DateModified
+FROM dbo.[User] u
+INNER JOIN AddressBook ab
+ON ab.UserId = u.Id
+GO
+/****** Object:  StoredProcedure [dbo].[spSeachContactList]    Script Date: 2019-04-10 04:24:25 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[spSeachContactList]
+@SeachKeyWord VARCHAR(50) = NULL
+AS
+SELECT u.Id as UserId, ab.Id,u.Name, u.Surname, u.Address, ab.PhoneNumber, ab.EmailAddress, ab.DateCreated, ab.DateModified
+FROM dbo.[User] u
+INNER JOIN AddressBook ab
+ON ab.UserId = u.Id
+WHERE u.Name like '%' + @SeachKeyWord + '%'
+OR u.Surname like '%' + @SeachKeyWord + '%'
+OR ab.PhoneNumber like '%' + @SeachKeyWord + '%'
+OR ab.EmailAddress like '%' + @SeachKeyWord + '%'
+GO

@@ -1,0 +1,30 @@
+C:\Users\anelisa\Desktop\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\RealmDigital.DataAccessLayer.dll.config
+C:\Users\anelisa\Desktop\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\RealmDigital.DataAccessLayer.dll
+C:\Users\anelisa\Desktop\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\RealmDigital.DataAccessLayer.pdb
+C:\Users\anelisa\Desktop\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\RealmDigital.Domain.dll
+C:\Users\anelisa\Desktop\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\anelisa\Desktop\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\anelisa\Desktop\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\RealmDigital.Domain.pdb
+C:\Users\anelisa\Desktop\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\anelisa\Desktop\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\anelisa\Desktop\RealmDigital\RealmDigital.DataAccessLayer\obj\Debug\RealmDigital.DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\anelisa\Desktop\RealmDigital\RealmDigital.DataAccessLayer\obj\Debug\RealmDigital.DataAccessLayer.dll
+C:\Users\anelisa\Desktop\RealmDigital\RealmDigital.DataAccessLayer\obj\Debug\RealmDigital.DataAccessLayer.pdb
+C:\Users\anelisa\Desktop\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\RealmDigital.Common.dll
+C:\Users\anelisa\Desktop\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\RealmDigital.Common.pdb
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\RealmDigital.DataAccessLayer.dll.config
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\RealmDigital.DataAccessLayer.dll
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\RealmDigital.DataAccessLayer.pdb
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\RealmDigital.Common.dll
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\RealmDigital.Domain.dll
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\RealmDigital.Common.pdb
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\RealmDigital.Domain.pdb
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.DataAccessLayer\obj\Debug\RealmDigital.DataAccessLayer.csprojAssemblyReference.cache
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.DataAccessLayer\obj\Debug\RealmDigital.DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.DataAccessLayer\obj\Debug\RealmDigital.DataAccessLayer.csproj.CopyComplete
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.DataAccessLayer\obj\Debug\RealmDigital.DataAccessLayer.dll
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.DataAccessLayer\obj\Debug\RealmDigital.DataAccessLayer.pdb
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\EntityFramework.dll
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\EntityFramework.xml
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml

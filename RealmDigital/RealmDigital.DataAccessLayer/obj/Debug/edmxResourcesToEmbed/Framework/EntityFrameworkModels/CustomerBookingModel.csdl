@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RTechnologiesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CustomerBookingEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="procMaintainBooking">
+      <Parameter Name="BookingID" Mode="In" Type="Int32" />
+      <Parameter Name="EventID" Mode="In" Type="Int32" />
+      <Parameter Name="PersonID" Mode="In" Type="Int32" />
+      <Parameter Name="BookingDate" Mode="In" Type="DateTime" />
+      <Parameter Name="AmountDue" Mode="In" Type="Double" />
+      <Parameter Name="DepositPaid" Mode="In" Type="Double" />
+      <Parameter Name="DepositPaiDate" Mode="In" Type="DateTime" />
+      <Parameter Name="FinalAmountPaid" Mode="In" Type="Double" />
+      <Parameter Name="PaymentNotes" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="procMaintainPeople">
+      <Parameter Name="PersonID" Mode="In" Type="Int32" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="PreferredName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="procMaintainVenue">
+      <Parameter Name="VenueID" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="WebsiteUrl" Mode="In" Type="String" />
+      <Parameter Name="Picture" Mode="In" Type="Binary" />
+      <Parameter Name="MapPicture" Mode="In" Type="Binary" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="vwPeopleLists" EntityType="RTechnologiesModel.vwPeopleList" />
+    <FunctionImport Name="procMaintainEvent">
+      <Parameter Name="EventID" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Venue" Mode="In" Type="Int32" />
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDateDisplay" Mode="In" Type="DateTime" />
+      <Parameter Name="HasGolf" Mode="In" Type="Boolean" />
+      <Parameter Name="IsbeginnersCourse" Mode="In" Type="Boolean" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="vwVenueLists" EntityType="RTechnologiesModel.vwVenueList" />
+    <EntitySet Name="vwEventLists" EntityType="RTechnologiesModel.vwEventList" />
+    <EntitySet Name="vwBookingLists" EntityType="RTechnologiesModel.vwBookingList" />
+  </EntityContainer>
+  <EntityType Name="vwPeopleList">
+    <Key>
+      <PropertyRef Name="PersonID" />
+    </Key>
+    <Property Name="PersonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Preferredname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vwVenueList">
+    <Key>
+      <PropertyRef Name="VenueID" />
+    </Key>
+    <Property Name="VenueID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WebsiteUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="MapPicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vwEventList">
+    <Key>
+      <PropertyRef Name="EventID" />
+      <PropertyRef Name="HasGolf" />
+      <PropertyRef Name="IsBeginnersCourse" />
+    </Key>
+    <Property Name="EventID" Type="Int32" Nullable="false" />
+    <Property Name="VenueName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VenueID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDateDisplay" Type="DateTime" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HasGolf" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="IsBeginnersCourse" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vwBookingList">
+    <Key>
+      <PropertyRef Name="BookingID" />
+    </Key>
+    <Property Name="BookingID" Type="Int32" Nullable="false" />
+    <Property Name="EventID" Type="Int32" />
+    <Property Name="Event" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PersonID" Type="Int32" />
+    <Property Name="FullName" Type="String" MaxLength="101" FixedLength="false" Unicode="false" />
+    <Property Name="BookingDate" Type="DateTime" Precision="3" />
+    <Property Name="AmountDue" Type="Double" />
+    <Property Name="DepositPaid" Type="Double" />
+    <Property Name="DepositPaidDate" Type="DateTime" Precision="3" />
+    <Property Name="FinalAmountPaid" Type="Double" />
+    <Property Name="PaymentNotes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

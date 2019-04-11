@@ -1,0 +1,11 @@
+C:\Users\anelisa\Desktop\RealmDigital\RealmDigital.Domain\bin\Debug\RealmDigital.Domain.dll
+C:\Users\anelisa\Desktop\RealmDigital\RealmDigital.Domain\bin\Debug\RealmDigital.Domain.pdb
+C:\Users\anelisa\Desktop\RealmDigital\RealmDigital.Domain\obj\Debug\RealmDigital.Domain.dll
+C:\Users\anelisa\Desktop\RealmDigital\RealmDigital.Domain\obj\Debug\RealmDigital.Domain.pdb
+C:\Users\anelisa\Desktop\RealmDigital\RealmDigital.Domain\obj\Debug\RealmDigital.Domain.csprojResolveAssemblyReference.cache
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.Domain\bin\Debug\RealmDigital.Domain.dll
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.Domain\bin\Debug\RealmDigital.Domain.pdb
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.Domain\obj\Debug\RealmDigital.Domain.csproj.CoreCompileInputs.cache
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.Domain\obj\Debug\RealmDigital.Domain.dll
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.Domain\obj\Debug\RealmDigital.Domain.pdb
+D:\anelisa\Documents\Personal\Assessment - 29 July 2017\Assessment - 29 July 2017\RealmDigital\RealmDigital\RealmDigital.Domain\obj\Debug\RealmDigital.Domain.csprojAssemblyReference.cache

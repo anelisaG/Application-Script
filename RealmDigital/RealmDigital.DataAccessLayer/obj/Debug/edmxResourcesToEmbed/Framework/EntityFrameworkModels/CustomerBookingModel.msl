@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RTechnologiesModelStoreContainer" CdmEntityContainer="CustomerBookingEntities">
+    <FunctionImportMapping FunctionImportName="procMaintainBooking" FunctionName="RTechnologiesModel.Store.procMaintainBooking" />
+    <FunctionImportMapping FunctionImportName="procMaintainPeople" FunctionName="RTechnologiesModel.Store.procMaintainPeople" />
+    <FunctionImportMapping FunctionImportName="procMaintainVenue" FunctionName="RTechnologiesModel.Store.procMaintainVenue" />
+    <EntitySetMapping Name="vwPeopleLists">
+      <EntityTypeMapping TypeName="RTechnologiesModel.vwPeopleList">
+        <MappingFragment StoreEntitySet="vwPeopleList">
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Preferredname" ColumnName="Preferredname" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="procMaintainEvent" FunctionName="RTechnologiesModel.Store.procMaintainEvent" />
+    <EntitySetMapping Name="vwVenueLists">
+      <EntityTypeMapping TypeName="RTechnologiesModel.vwVenueList">
+        <MappingFragment StoreEntitySet="vwVenueList">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MapPicture" ColumnName="MapPicture" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="WebsiteUrl" ColumnName="WebsiteUrl" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="VenueID" ColumnName="VenueID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwEventLists">
+      <EntityTypeMapping TypeName="RTechnologiesModel.vwEventList">
+        <MappingFragment StoreEntitySet="vwEventList">
+          <ScalarProperty Name="IsBeginnersCourse" ColumnName="IsBeginnersCourse" />
+          <ScalarProperty Name="HasGolf" ColumnName="HasGolf" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EndDateDisplay" ColumnName="EndDateDisplay" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="VenueID" ColumnName="VenueID" />
+          <ScalarProperty Name="VenueName" ColumnName="VenueName" />
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwBookingLists">
+      <EntityTypeMapping TypeName="RTechnologiesModel.vwBookingList">
+        <MappingFragment StoreEntitySet="vwBookingList">
+          <ScalarProperty Name="PaymentNotes" ColumnName="PaymentNotes" />
+          <ScalarProperty Name="FinalAmountPaid" ColumnName="FinalAmountPaid" />
+          <ScalarProperty Name="DepositPaidDate" ColumnName="DepositPaidDate" />
+          <ScalarProperty Name="DepositPaid" ColumnName="DepositPaid" />
+          <ScalarProperty Name="AmountDue" ColumnName="AmountDue" />
+          <ScalarProperty Name="BookingDate" ColumnName="BookingDate" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="Event" ColumnName="Event" />
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="BookingID" ColumnName="BookingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
